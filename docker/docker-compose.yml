@@ -1,0 +1,10 @@
+version: '3.2'
+services:
+  rust-dev-env:
+    container_name: 'rust-dev-env'
+    image: 'mmaarouf/rust-dev-env:latest'
+    stdin_open: true
+    tty: true
+    volumes:
+       - ..:/code
+    working_dir: /code
