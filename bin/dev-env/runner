@@ -19,7 +19,7 @@ run() {
 
     if [[ -n $RUNNING_CONTAINER ]]; then
         echo Running in existing container
-        $DOCKER_COMPOSE exec $DEV_CONTAINER sh -c "$COMMAND"
+        $DOCKER_COMPOSE exec $DEV_CONTAINER sh -l -c "$COMMAND"
     else
         echo Running in new container
         $DOCKER_COMPOSE run --rm --service-ports $DEV_CONTAINER -c "$COMMAND"
